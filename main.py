@@ -56,7 +56,7 @@ def message_from_user(message):
     user_id = message.from_user.id
     update_messages_count(user_id)
     
-@bot.message_handler(content_types=["text"])
+@bot.message_handler(commands=["message"], content_types=["text"])
 def write(message):
     text = message.text
     

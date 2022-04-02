@@ -56,13 +56,6 @@ def message_from_user(message):
     user_id = message.from_user.id
     update_messages_count(user_id)
     
-@bot.message_handler(commands=["message"], content_types=["text"])
-def write(message):
-    text = message.text
-    
-    f = open("writes.txt", "a")
-    f.write(text)
-    f.close()
 
 
 @server.route(f"/{BOT_TOKEN}", methods=["POST"])

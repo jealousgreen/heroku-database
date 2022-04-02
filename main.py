@@ -57,11 +57,6 @@ def message_from_user(message):
     user_id = message.from_user.id
     update_messages_count(user_id)
 
-@bot.message_handler(commands=["cat"])
-def get_cat(message):
- bot.reply_to(message, "Kitty :3")
- photo = InputFile("files/test.jpg")
- await bot.send_photo(chat_id=message.chat.id, photo=photo)
 
 @server.route(f"/{BOT_TOKEN}", methods=["POST"])
 def redirect_message():

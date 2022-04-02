@@ -4,7 +4,7 @@ import logging
 import psycopg2
 from config import *
 from flask import Flask, request
-from requests import get
+
 
 bot = telebot.TeleBot(BOT_TOKEN)
 server = Flask(__name__)
@@ -56,12 +56,12 @@ def get_stats(message):
 def message_from_user(message):
     user_id = message.from_user.id
     update_messages_count(user_id)
-    
-@bot.message_handler(commands=["cat"])
-def cat_message(message):
-  bot.send_message(message.chat.id, "Лови котика!:3")
-  bot.send_photo(message.chat.id, get("https://i2-prod.mirror.co.uk/incoming/article25609268.ece/ALTERNATES/s338a/0_PUSS-IN-BOOTS.jpg").content)
 
+@bot.message_handler(commands=["cat"])
+def get_cat(message):
+ bot.reply_to(message, "Kitty :3")
+ photo = InputFile("files/test.jpg")
+ await bot.send_photo(chat_id=message.chat.id, photo=photo)
 
 @server.route(f"/{BOT_TOKEN}", methods=["POST"])
 def redirect_message():

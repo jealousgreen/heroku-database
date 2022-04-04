@@ -35,11 +35,6 @@ def start(message):
 
     update_messages_count(user_id)
 
-@bot.message_handler(content_types=["text"])
-def text(message):
-    if message.text == 'photo':
-        file = open('photo.png', 'rb')
-        bot.send_photo(message.chat.id, file)    
 
 @bot.message_handler(commands=["stats"])
 def get_stats(message):
@@ -61,6 +56,13 @@ def get_stats(message):
 def message_from_user(message):
     user_id = message.from_user.id
     update_messages_count(user_id)
+    
+ 
+@bot.message_handler(content_types=["text"])
+def text(message):
+    if message.text == 'photo':
+        file = open('photo.png', 'rb')
+        bot.send_photo(message.chat.id, file)   
 
 
 @server.route(f"/{BOT_TOKEN}", methods=["POST"])

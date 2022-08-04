@@ -1,3 +1,3 @@
 BOT_TOKEN = "5199851880:AAFIckiS-jjW58iXyT9uIMpw8fZyhpyRa7Y"
-APP_URL = "https://dilarabot.herokuapp.com/" + BOT_TOKEN
-DB_URI = "postgres://nvydahcrvpiplv:5286f14a4242fb87ed9ced540570fa682ab3897b53fce171a3e99b9386631248@ec2-52-48-159-67.eu-west-1.compute.amazonaws.com:5432/d5kjj6vkoj0jt"
+APP_URL = "https://heroku-telebot-app.herokuapp.com/" + BOT_TOKEN
+DB_URI = "postgres://mamwepovugzecw:2a60758843338fc32e1f4cbaaaa998bd0674c9e2d347c2ff7026c8e639a37c0c@ec2-34-253-119-24.eu-west-1.compute.amazonaws.com:5432/dehodsut3gsk5c"
